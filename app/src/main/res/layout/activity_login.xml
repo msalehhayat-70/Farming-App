@@ -20,7 +20,8 @@
             android:layout_height="match_parent"
 
             android:background="@drawable/authback"
-            tools:context=".view.auth.LoginActivity">
+            tools:context=".view.auth.LoginActivity"
+            tools:ignore="ScrollViewSize">
 
 
             <TextView
@@ -35,7 +36,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                />
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/title2TextLogin"
@@ -48,7 +49,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/titleTextLogin" />
+                app:layout_constraintTop_toBottomOf="@id/titleTextLogin"
+                tools:ignore="HardcodedText" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guide2"
@@ -88,7 +90,8 @@
                     android:hint="Email"
                     android:textColor="#fff"
                     android:inputType="textEmailAddress"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -113,19 +116,20 @@
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:textColor="#fff"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.button.MaterialButton
-                android:onClick="@{authViewModel::loginButtonClicked}"
                 android:id="@+id/loginBtnLogin"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-
                 android:background="@drawable/all_buttons"
+
+                android:onClick="@{authViewModel::loginButtonClicked}"
                 android:padding="15sp"
                 android:text="Login"
                 android:textAlignment="center"
@@ -136,7 +140,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/passwordContLogin" />
+                app:layout_constraintTop_toBottomOf="@id/passwordContLogin"
+                tools:ignore="HardcodedText,DuplicateSpeakableTextCheck,TextContrastCheck" />
 
             <TextView
                 android:id="@+id/orTextLogin"
@@ -148,7 +153,8 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/loginBtnLogin" />
+                app:layout_constraintTop_toBottomOf="@+id/loginBtnLogin"
+                tools:ignore="HardcodedText" />
 
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/signGoogleBtnLogin"
@@ -172,7 +178,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/forgotPasswdTextLogin" />
+                app:layout_constraintTop_toBottomOf="@+id/forgotPasswdTextLogin"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -184,7 +191,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/createaccountText"
-                />
+                tools:ignore="HardcodedText" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

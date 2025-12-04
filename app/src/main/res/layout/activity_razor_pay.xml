@@ -21,26 +21,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
 
-            />
+            tools:ignore="HardcodedText" />
 
 
-        <EditText
-            android:id="@+id/fullNamePrePay"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="7dp"
-            android:background="@drawable/edit_back"
+    <EditText
+        android:id="@+id/fullNamePrePay"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="7dp"
+        android:background="@drawable/edit_back"
 
-            android:hint="Full Name"
-            android:padding="10dp"
-            android:textColor="@color/colorPrimary"
-            android:textColorHint="#FF404A3A"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toTopOf="@id/localityPrePay"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/paymentFragTitle" />
+        android:hint="Full Name"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="#FF404A3A"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@id/localityPrePay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/paymentFragTitle"
+        tools:ignore="Autofill,HardcodedText,SpUsage,TextFields,TextSizeCheck,VisualLintTextFieldSize" />
 
 
         <EditText
@@ -59,7 +60,8 @@
             app:layout_constraintBottom_toTopOf="@id/cityPrePay"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fullNamePrePay" />
+            app:layout_constraintTop_toBottomOf="@id/fullNamePrePay"
+            tools:ignore="Autofill,HardcodedText,TextFields,VisualLintTextFieldSize" />
 
 
         <EditText
@@ -77,7 +79,8 @@
             app:layout_constraintBottom_toTopOf="@id/statePrePay"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/localityPrePay" />
+            app:layout_constraintTop_toBottomOf="@id/localityPrePay"
+            tools:ignore="Autofill,HardcodedText,TextFields,VisualLintTextFieldSize" />
 
 
         <!--    <View-->
@@ -108,7 +111,8 @@
             app:layout_constraintBottom_toTopOf="@id/pincodePrePay"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cityPrePay" />
+            app:layout_constraintTop_toBottomOf="@id/cityPrePay"
+            tools:ignore="Autofill,HardcodedText,TextFields,VisualLintTextFieldSize" />
 
 
         <EditText
@@ -125,7 +129,8 @@
             app:layout_constraintBottom_toTopOf="@id/mobileNumberPrePay"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/statePrePay" />
+            app:layout_constraintTop_toBottomOf="@id/statePrePay"
+            tools:ignore="Autofill,HardcodedText,TextFields,VisualLintTextFieldSize" />
 
 
         <EditText
@@ -142,7 +147,8 @@
             android:textColorHint="#FF404A3A"
             app:layout_constraintBottom_toTopOf="@id/addressTypeTitle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pincodePrePay" />
+            app:layout_constraintTop_toBottomOf="@id/pincodePrePay"
+            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
 
         <TextView
             android:id="@+id/addressTypeTitle"
@@ -156,7 +162,8 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/addressTypeRadioGroup"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mobileNumberPrePay" />
+            app:layout_constraintTop_toBottomOf="@id/mobileNumberPrePay"
+            tools:ignore="HardcodedText" />
 
         <RadioGroup
            android:checkedButton="@id/homerd"
@@ -178,56 +185,57 @@
                 android:id="@+id/homerd"
                 android:layout_weight="1"
                 android:buttonTint="@color/colorPrimary"
-                android:text="Home" />
+                android:text="Home"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:layout_width="wrap_content"
                 android:buttonTint="@color/colorPrimary"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Office" />
+                android:text="Office"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:buttonTint="@color/colorPrimary"
-                android:text="Other" />
+                android:text="Other"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
 
         </RadioGroup>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Net Value: ₹"
-            app:layout_constraintTop_toBottomOf="@id/addressTypeRadioGroup"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:id="@+id/netValue"
-            android:textColor="@color/colorThird"
-            />
+    <TextView
+        android:id="@+id/netValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Net Value: "
+        android:textColor="@color/colorThird"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addressTypeRadioGroup"
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
 
-
-
-
-        <Button
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/orderNowBtn"
-            android:layout_width="250dp"
-            android:layout_height="55dp"
-            android:layout_marginVertical="7dp"
-            android:background="@drawable/round_borderless_general"
-            android:backgroundTint="@color/colorThird"
-            android:text="Proceed with Payment"
-            android:textAllCaps="false"
-            android:textColor="#fff"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+    <Button
+        android:id="@+id/orderNowBtn"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_marginVertical="7dp"
+        android:background="@drawable/round_borderless_general"
+        android:backgroundTint="@color/colorThird"
+        android:text="Proceed with Payment"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText,TextSizeCheck,TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
