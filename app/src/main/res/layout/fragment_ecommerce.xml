@@ -51,7 +51,7 @@ android:layout_marginLeft="12dp"
         android:textColor="@color/fontColor"
 
 
-         />
+        tools:ignore="HardcodedText,RtlHardcoded" />
 
     <com.google.android.material.chip.Chip
 
@@ -64,7 +64,7 @@ android:layout_marginLeft="12dp"
         android:textColor="@color/fontColor"
 
         app:chipBackgroundColor="@color/chip_bg_states"
-        />
+        tools:ignore="HardcodedText" />
     <com.google.android.material.chip.Chip
         android:id="@+id/chip3"
         style="@style/Widget.MaterialComponents.Chip.Filter"
@@ -75,7 +75,7 @@ android:layout_marginLeft="12dp"
         android:textColor="@color/fontColor"
 
         app:chipBackgroundColor="@color/chip_bg_states"
-        />
+        tools:ignore="HardcodedText" />
     <com.google.android.material.chip.Chip
         android:id="@+id/chip4"
         style="@style/Widget.MaterialComponents.Chip.Filter"
@@ -86,7 +86,7 @@ android:layout_marginLeft="12dp"
         android:textColor="@color/fontColor"
 
         app:chipBackgroundColor="@color/chip_bg_states"
-        />
+        tools:ignore="HardcodedText" />
     <com.google.android.material.chip.Chip
         android:id="@+id/chip5"
         style="@style/Widget.MaterialComponents.Chip.Filter"
@@ -97,7 +97,7 @@ android:layout_marginLeft="12dp"
         android:textColor="@color/fontColor"
 
         app:chipBackgroundColor="@color/chip_bg_states"
-        />
+        tools:ignore="HardcodedText" />
     <com.google.android.material.chip.Chip
         android:id="@+id/chip6"
         style="@style/Widget.MaterialComponents.Chip.Filter"

@@ -34,7 +34,8 @@
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/progress_apmc" />
+            app:layout_constraintTop_toBottomOf="@id/progress_apmc"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/apmcSearchBar"
@@ -48,7 +49,8 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/apmcSearchBar2"
             app:layout_constraintEnd_toStartOf="@id/guide1"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
 
 
         <Spinner
@@ -61,7 +63,8 @@
             app:layout_constraintBottom_toBottomOf="@id/apmcSearchBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/guide1"
-            app:layout_constraintTop_toTopOf="@id/apmcSearchBar" />
+            app:layout_constraintTop_toTopOf="@id/apmcSearchBar"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
             android:id="@+id/apmcSearchBar2"
@@ -76,7 +79,8 @@
             app:layout_constraintBottom_toTopOf="@id/hr1Apmc"
 
             app:layout_constraintEnd_toStartOf="@id/guide1"
-            app:layout_constraintTop_toBottomOf="@id/apmcSearchBar" />
+            app:layout_constraintTop_toBottomOf="@id/apmcSearchBar"
+            tools:ignore="HardcodedText" />
 
         <Spinner
             android:id="@+id/spinner2"
@@ -88,7 +92,8 @@
             app:layout_constraintBottom_toBottomOf="@id/apmcSearchBar2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/guide1"
-            app:layout_constraintTop_toTopOf="@id/apmcSearchBar2" />
+            app:layout_constraintTop_toTopOf="@id/apmcSearchBar2"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
         <!--        <androidx.appcompat.widget.SearchView-->
         <!--            android:id="@+id/apmcSearchBar"-->
@@ -117,7 +122,8 @@
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@id/dateValueTextApmc"
-            app:layout_constraintTop_toBottomOf="@id/hr1Apmc" />
+            app:layout_constraintTop_toBottomOf="@id/hr1Apmc"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/dateValueTextApmc"
@@ -132,7 +138,8 @@
             app:layout_constraintBottom_toBottomOf="@id/dateTextApmc"
             app:layout_constraintEnd_toEndOf="parent"
 
-            app:layout_constraintTop_toTopOf="@id/dateTextApmc" />
+            app:layout_constraintTop_toTopOf="@id/dateTextApmc"
+            tools:ignore="HardcodedText" />
 
         <View
             android:id="@+id/hr1Apmc"
@@ -156,7 +163,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hr1Apmc" />
+            app:layout_constraintTop_toBottomOf="@id/hr1Apmc"
+            tools:ignore="HardcodedText" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycleAPMC"

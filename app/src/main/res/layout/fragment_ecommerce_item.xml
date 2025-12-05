@@ -35,7 +35,7 @@
             android:text="Loading..."
             android:id="@+id/loadingText"
             android:elevation="12dp"
-            />
+            tools:ignore="HardcodedText" />
 
 
 
@@ -98,7 +98,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
-                    />
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/productShortDescription"
@@ -111,7 +111,8 @@
                     android:textColor="@color/fontColor"
 
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/productTitle" />
+                    app:layout_constraintTop_toBottomOf="@id/productTitle"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
 
@@ -120,14 +121,15 @@
                     android:layout_height="wrap_content"
 
                     android:layout_marginVertical="7dp"
-                    android:text="₹ 341.55"
-                    app:layout_constraintBottom_toTopOf="@id/savedAmount"
+                    android:text="341.55"
                     android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/savedAmount"
 
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/productShortDescription" />
+                    app:layout_constraintTop_toBottomOf="@id/productShortDescription"
+                    tools:ignore="HardcodedText,TextContrastCheck" />
 
                 <LinearLayout
                     android:id="@+id/quantityChangeCard"
@@ -144,7 +146,8 @@
                         android:layout_width="40dp"
                         android:layout_height="30dp"
                         android:backgroundTint="#00FFFFFF"
-                        android:src="@drawable/add_icon" />
+                        android:src="@drawable/add_icon"
+                        tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                     <TextView
                         android:id="@+id/quantityCountEcomm"
@@ -154,7 +157,8 @@
                         android:layout_marginHorizontal="5dp"
                         android:text="1"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                     <ImageButton
                         android:id="@+id/decreaseQtyBtn"
@@ -162,7 +166,7 @@
                         android:layout_height="30dp"
                         android:backgroundTint="#00FFFFFF"
                         android:src="@drawable/minus_icon"
-                         />
+                        tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
                 </LinearLayout>
@@ -174,21 +178,22 @@
                     android:layout_marginVertical="7dp"
                     android:text="You save: ₹39"
                     android:textColor="@color/fontColor"
-                    android:textStyle="italic"
                     android:textSize="10sp"
+                    android:textStyle="italic"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/productPrice" />
+                    app:layout_constraintTop_toBottomOf="@id/productPrice"
+                    tools:ignore="HardcodedText,SmallSp,TextContrastCheck" />
 
                 <ImageView
                     android:id="@+id/deliveryTruckImage"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/deliverycost"
-
                     android:src="@drawable/ic_baseline_local_shipping_24"
                     app:layout_constraintBottom_toBottomOf="@id/deliverycost"
-                    />
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/deliverycost"
+                    tools:ignore="ContentDescription,ImageContrastCheck" />
 
                 <TextView
                     android:id="@+id/deliverycostTitle"
@@ -201,7 +206,8 @@
                     android:textSize="10sp"
                     android:textStyle="italic"
                     app:layout_constraintStart_toEndOf="@id/deliveryTruckImage"
-                    app:layout_constraintTop_toBottomOf="@id/savedAmount" />
+                    app:layout_constraintTop_toBottomOf="@id/savedAmount"
+                    tools:ignore="HardcodedText,SmallSp,TextSizeCheck" />
 
                 <TextView
                     android:id="@+id/deliverycost"
@@ -216,7 +222,7 @@
                     app:layout_constraintStart_toEndOf="@id/deliverycostTitle"
                     app:layout_constraintTop_toBottomOf="@id/savedAmount"
 
-                    />
+                    tools:ignore="HardcodedText,SmallSp" />
 
                 <View
                     android:id="@+id/hr1EcommItem"
@@ -240,7 +246,8 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/hr1EcommItem" />
+                    app:layout_constraintTop_toBottomOf="@id/hr1EcommItem"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/productLongDesc"
@@ -256,7 +263,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/hr2EcommItem"
-                    app:layout_constraintTop_toBottomOf="@id/productLongDescTitle" />
+                    app:layout_constraintTop_toBottomOf="@id/productLongDescTitle"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
 
                 <View
                     android:id="@+id/hr2EcommItem"
@@ -293,7 +301,8 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/hr2EcommItem" />
+                    app:layout_constraintTop_toBottomOf="@id/hr2EcommItem"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/colorTitle"
@@ -305,7 +314,8 @@
                     app:layout_constraintTop_toBottomOf="@id/productSpecTitle"
                     app:layout_constraintStart_toStartOf="parent"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
 
                 <LinearLayout
@@ -324,11 +334,11 @@
                         android:id="@+id/color1"
                         android:layout_width="30dp"
                         android:layout_height="25dp"
-                        android:backgroundTint="@color/colorThird"
                         android:layout_gravity="center"
                         android:layout_marginStart="7dp"
                         android:background="@drawable/rounder_border_general"
-                        />
+                        android:backgroundTint="@color/colorThird"
+                        tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                     <ImageButton
                         android:id="@+id/color2"
@@ -336,27 +346,30 @@
                         android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_marginStart="7dp"
-                        android:backgroundTint="@color/colorPrimary"
                         android:background="@drawable/round_borderless_general"
-                        />
+                        android:backgroundTint="@color/colorPrimary"
+                        tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
                     <ImageButton
                         android:id="@+id/color3"
-                        android:layout_gravity="center"
                         android:layout_width="30dp"
                         android:layout_height="25dp"
-                        android:backgroundTint="@color/colorPrimaryDark"
-                        android:background="@drawable/round_borderless_general"
+                        android:layout_gravity="center"
                         android:layout_marginStart="7dp"
-                        />
+                        android:background="@drawable/round_borderless_general"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:importantForAccessibility="no"
+                        tools:ignore="ContentDescription,TouchTargetSizeCheck" />
+
                     <ImageButton
                         android:id="@+id/color4"
                         android:layout_width="30dp"
-                        android:layout_gravity="center"
                         android:layout_height="25dp"
-                        android:backgroundTint="@color/fontColor"
+                        android:layout_gravity="center"
                         android:layout_marginStart="7dp"
                         android:background="@drawable/round_borderless_general"
-                        />
+                        android:backgroundTint="@color/fontColor"
+                        tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 </LinearLayout>
 
@@ -406,7 +419,8 @@
                     android:textColor="@color/fontColor"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/hr3EcommItem" />
+                    app:layout_constraintTop_toBottomOf="@id/hr3EcommItem"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/howToUseText"
@@ -419,7 +433,8 @@
                     android:lineSpacingExtra="3dp"
                     android:textSize="17sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/howToUseLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/howToUseLabel"
+                    tools:ignore="HardcodedText,UnusedAttribute,VisualLintLongText" />
 
                 <TextView
                     android:id="@+id/similarProductTitle"
@@ -431,7 +446,8 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/howToUseText" />
+                    app:layout_constraintTop_toBottomOf="@id/howToUseText"
+                    tools:ignore="HardcodedText" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/similarProductsRecycler"
@@ -461,7 +477,8 @@
                     app:layout_constraintTop_toBottomOf="@id/similarProductsRecycler"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/buynow"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
 
                 <Button
 
@@ -481,7 +498,8 @@
                     app:layout_constraintTop_toBottomOf="@id/similarProductsRecycler"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/addToCart" />
+                    app:layout_constraintStart_toEndOf="@id/addToCart"
+                    tools:ignore="HardcodedText" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

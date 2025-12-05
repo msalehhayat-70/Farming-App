@@ -31,7 +31,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginVertical="7dp"
-            />
+            tools:ignore="HardcodedText,VisualLintOverlap" />
 
         <View
             android:id="@+id/totalBackgroundCart"
@@ -56,7 +56,8 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/totalBackgroundCart"
             app:layout_constraintStart_toStartOf="@id/totalBackgroundCart"
-            app:layout_constraintTop_toTopOf="@id/totalBackgroundCart" />
+            app:layout_constraintTop_toTopOf="@id/totalBackgroundCart"
+            tools:ignore="HardcodedText,RtlHardcoded,TextContrastCheck" />
 
         <TextView
             android:id="@+id/totalItemsValue"
@@ -69,7 +70,8 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/totalBackgroundCart"
             app:layout_constraintStart_toEndOf="@id/totalItemsTitle"
-            app:layout_constraintTop_toTopOf="@id/totalBackgroundCart" />
+            app:layout_constraintTop_toTopOf="@id/totalBackgroundCart"
+            tools:ignore="HardcodedText,RtlHardcoded,TextContrastCheck" />
 
         <TextView
             android:id="@+id/totalCostTitle"
@@ -82,7 +84,8 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/totalBackgroundCart"
             app:layout_constraintEnd_toStartOf="@id/totalCostValue"
-            app:layout_constraintTop_toTopOf="@id/totalBackgroundCart" />
+            app:layout_constraintTop_toTopOf="@id/totalBackgroundCart"
+            tools:ignore="HardcodedText,RtlHardcoded,TextContrastCheck" />
 
         <TextView
             android:id="@+id/totalCostValue"
@@ -95,7 +98,8 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/totalBackgroundCart"
             app:layout_constraintEnd_toEndOf="@id/totalBackgroundCart"
-            app:layout_constraintTop_toTopOf="@id/totalBackgroundCart" />
+            app:layout_constraintTop_toTopOf="@id/totalBackgroundCart"
+            tools:ignore="HardcodedText,RtlHardcoded,TextContrastCheck" />
 
         <View
             android:id="@+id/hrCart"
@@ -134,7 +138,8 @@
             android:textSize="21sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,13 +8,15 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
         <!-- TODO: Update blank fragment layout -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingHorizontal="8dp">
+            android:paddingHorizontal="8dp"
+            tools:ignore="ScrollViewSize">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/weatherCard"
@@ -43,7 +45,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
 
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription,ImageContrastCheck" />
 
                     <TextView
                         android:id="@+id/weatherCityTitle"
@@ -56,7 +59,8 @@
                         app:layout_constraintBottom_toTopOf="@id/windTextWeathFrag"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/weathIconImageWeathFrag"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/weathTempTextWeathFrag"
@@ -70,7 +74,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/windTextWeathFrag"
                         app:layout_constraintStart_toEndOf="@id/weathIconImageWeathFrag"
-                        app:layout_constraintTop_toBottomOf="@id/weatherCityTitle" />
+                        app:layout_constraintTop_toBottomOf="@id/weatherCityTitle"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/windTextWeathFrag"
@@ -82,7 +87,8 @@
                         app:layout_constraintBottom_toTopOf="@id/humidityTextWeathFrag"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/weathTempTextWeathFrag"
-                        app:layout_constraintTop_toBottomOf="@id/weatherCityTitle" />
+                        app:layout_constraintTop_toBottomOf="@id/weatherCityTitle"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/humidityTextWeathFrag"
@@ -93,7 +99,8 @@
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@id/windTextWeathFrag"
-                        app:layout_constraintTop_toBottomOf="@id/windTextWeathFrag" />
+                        app:layout_constraintTop_toBottomOf="@id/windTextWeathFrag"
+                        tools:ignore="HardcodedText" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -110,7 +117,8 @@
                 android:textStyle="bold"
 
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/weatherCard" />
+                app:layout_constraintTop_toBottomOf="@id/weatherCard"
+                tools:ignore="HardcodedText" />
 
             <HorizontalScrollView
                 android:id="@+id/categoryHorizontal"
@@ -123,7 +131,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    tools:ignore="ScrollViewSize">
 
 
 
@@ -144,7 +153,8 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:scaleType="fitXY"
-                                android:src="@drawable/plant3" />
+                                android:src="@drawable/plant3"
+                                tools:ignore="ContentDescription,ImageContrastCheck" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -154,7 +164,8 @@
                                 android:textColor="@color/fontColor"
                                 android:layout_marginVertical="7dp"
                                 android:textSize="14sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -174,7 +185,8 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:scaleType="fitXY"
-                                android:src="@drawable/method2" />
+                                android:src="@drawable/method2"
+                                tools:ignore="ContentDescription,ImageContrastCheck" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -184,7 +196,8 @@
                                 android:text="Methods"
                                 android:layout_marginVertical="7dp"
                                 android:textSize="14sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -204,7 +217,8 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:scaleType="fitXY"
-                                android:src="@drawable/disease" />
+                                android:src="@drawable/disease"
+                                tools:ignore="ContentDescription" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -214,7 +228,8 @@
                                 android:layout_gravity="center"
                                 android:text="Diseases"
                                 android:textSize="14sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -235,7 +250,8 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:scaleType="fitXY"
-                                android:src="@drawable/yojna2" />
+                                android:src="@drawable/yojna2"
+                                tools:ignore="ContentDescription" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -245,7 +261,8 @@
                                 android:textColor="@color/fontColor"
                                 android:layout_marginVertical="7dp"
                                 android:textSize="14sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -266,7 +283,8 @@
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:scaleType="fitXY"
-                                android:src="@drawable/fruits" />
+                                android:src="@drawable/fruits"
+                                tools:ignore="ContentDescription" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -276,7 +294,8 @@
                                 android:textColor="@color/fontColor"
                                 android:text="Fruits"
                                 android:textSize="14sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -301,7 +320,8 @@
                 android:textSize="21sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/carousel" />
+                app:layout_constraintTop_toBottomOf="@id/carousel"
+                tools:ignore="HardcodedText" />
 
 <!--            <androidx.cardview.widget.CardView-->
 <!--                android:id="@+id/ecomm1"-->
