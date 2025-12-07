@@ -4,6 +4,7 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
@@ -35,7 +36,8 @@
                 android:src="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
 
             <TextView
                 android:id="@+id/ecommtitle"
@@ -50,7 +52,8 @@
                 app:layout_constraintBottom_toTopOf="@id/ecommPrice"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/ecommImage"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText,UnusedAttribute" />
 
             <TextView
 
@@ -61,11 +64,12 @@
                 android:layout_marginTop="5dp"
                 android:text="$50"
                 android:textColor="@color/colorPrimary"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/ecommRating"
                 app:layout_constraintStart_toEndOf="@id/ecommImage"
-                app:layout_constraintTop_toBottomOf="@id/ecommtitle" />
+                app:layout_constraintTop_toBottomOf="@id/ecommtitle"
+                tools:ignore="HardcodedText,RtlHardcoded,TextSizeCheck,TextContrastCheck" />
 
             <RatingBar
                 android:id="@+id/ecommRating"
@@ -78,7 +82,8 @@
                 android:theme="@style/RatingBar"
                 app:layout_constraintBottom_toTopOf="@id/ecommretailer"
                 app:layout_constraintStart_toEndOf="@id/ecommImage"
-                app:layout_constraintTop_toBottomOf="@id/ecommPrice" />
+                app:layout_constraintTop_toBottomOf="@id/ecommPrice"
+                tools:ignore="RtlHardcoded" />
 
             <TextView
                 android:id="@+id/ecommretailer"
@@ -87,13 +92,14 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="3.5dp"
-                android:text="india pvt ltd"
+                android:text="Farmdar pvt ltd"
                 android:textColor="@color/fontColor"
                 android:textSize="10sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/ecommImage"
-                app:layout_constraintTop_toBottomOf="@id/ecommRating" />
+                app:layout_constraintTop_toBottomOf="@id/ecommRating"
+                tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
 
             <TextView
                 android:id="@+id/ecommItemAvailability"
@@ -104,7 +110,8 @@
                 android:textColor="@color/fontColor"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="HardcodedText" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

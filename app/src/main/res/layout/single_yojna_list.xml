@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="7dp">
@@ -32,15 +33,17 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@id/yojnaImageYojnaList"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/yojnaImageYojnaList" />
+                app:layout_constraintTop_toTopOf="@id/yojnaImageYojnaList"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/yojnaDateYojnaList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="21 August 2021"
+                android:text="1 January 2026"
                 app:layout_constraintBottom_toBottomOf="@id/yojnaImageYojnaList"
-                app:layout_constraintStart_toStartOf="@id/yojnaTitleYojnaList" />
+                app:layout_constraintStart_toStartOf="@id/yojnaTitleYojnaList"
+                tools:ignore="HardcodedText" />
 
             <ImageView
                 android:id="@+id/yojnaImageYojnaList"
@@ -53,7 +56,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/yojnaTitleYojnaList"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/yojnaStatusYojnaList"
@@ -65,7 +69,8 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/yojnaDateYojnaList"
-                app:layout_constraintEnd_toStartOf="@id/yojnaImageYojnaList" />
+                app:layout_constraintEnd_toStartOf="@id/yojnaImageYojnaList"
+                tools:ignore="HardcodedText,TextContrastCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

@@ -6,7 +6,8 @@
     android:layout_height="150dp"
     android:background="@color/colorPrimary"
     android:gravity="bottom"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    tools:ignore="TextSizeCheck">
 
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
 
@@ -27,7 +28,8 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@drawable/ic_user_profile"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription,ImageContrastCheck" />
 
     </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 
@@ -39,7 +41,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/circularRevealCardView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/navbarUserEmail"
@@ -52,7 +55,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintStart_toStartOf="@+id/circularRevealCardView"
-        app:layout_constraintTop_toBottomOf="@+id/circularRevealCardView" />
+        app:layout_constraintTop_toBottomOf="@+id/circularRevealCardView"
+        tools:ignore="HardcodedText,TextContrastCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/navbarUserName"
@@ -66,7 +70,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/cityTextNavHeader"
         app:layout_constraintStart_toEndOf="@+id/circularRevealCardView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,RtlHardcoded,TextContrastCheck" />
 
     <TextView
         android:id="@+id/cityTextNavHeader"
@@ -78,7 +83,8 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/navBarUserPostCount"
         app:layout_constraintStart_toStartOf="@+id/navbarUserName"
-        app:layout_constraintTop_toBottomOf="@+id/navbarUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/navbarUserName"
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
     <TextView
         android:id="@+id/navBarUserPostCount"
@@ -90,6 +96,7 @@
         android:textColor="#fff"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/circularRevealCardView"
-        app:layout_constraintStart_toStartOf="@+id/cityTextNavHeader" />
+        app:layout_constraintStart_toStartOf="@+id/cityTextNavHeader"
+        tools:ignore="HardcodedText,RtlHardcoded,TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

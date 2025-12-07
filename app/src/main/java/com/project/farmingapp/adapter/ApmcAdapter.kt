@@ -1,5 +1,6 @@
 package com.project.farmingapp.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,24 +9,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.project.farmingapp.R
 import com.project.farmingapp.model.data.APMCCustomRecords
-import com.project.farmingapp.model.data.APMCMain
-import com.project.farmingapp.model.data.APMCRecords
 
-class ApmcAdapter(val context: Context, val data: List<APMCCustomRecords>) :
+class ApmcAdapter(val context: Context, private val data: List<APMCCustomRecords>) :
     RecyclerView.Adapter<ApmcAdapter.ApmcViewHolder>() {
+
+    // A ViewHolder describes an item view and metadata about its place within the RecyclerView.
     class ApmcViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        var market = itemView.findViewById<TextView>(R.id.apmcNameValue)
-        var location = itemView.findViewById<TextView>(R.id.apmcLocationValue)
-        var commodity = itemView.findViewById<TextView>(R.id.comodityname)
-        var min = itemView.findViewById<TextView>(R.id.minvalue)
-        var max = itemView.findViewById<TextView>(R.id.maxvalue)
-//        var modal=itemView.findViewById<TextView>(R.id.modalValueTextApmc)
-
+        // It's good practice to make these private if they are only used within the adapter
+        val market: TextView = itemView.findViewById(R.id.apmcNameValue)
+        val location: TextView = itemView.findViewById(R.id.apmcLocationValue)
+        val commodity: TextView = itemView.findViewById(R.id.comodityname)
+        val min: TextView = itemView.findViewById(R.id.minvalue)
+        val max: TextView = itemView.findViewById(R.id.maxvalue)
+        // var modal=itemView.findViewById<TextView>(R.id.modalValueTextApmc)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ApmcViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.apmc_single_list, parent, false)
+        val view = LayoutInflater.from(parent.context) // Use parent.context for better practice
+            .inflate(R.layout.apmc_single_list, parent, false)
         return ApmcViewHolder(view)
     }
 
@@ -33,25 +34,32 @@ class ApmcAdapter(val context: Context, val data: List<APMCCustomRecords>) :
         return data.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ApmcViewHolder, position: Int) {
-        val mainData = data[position]
-        holder.market.text = mainData.market
-        holder.location.text = mainData.district + " , " + mainData.state
-        for (i in mainData.commodity) {
-            holder.commodity.text = holder.commodity.text .toString()+ i + "\n"
-        }
-        holder.commodity.text = holder.commodity.text.toString().trimEnd()
+        val currentItem = data[position]
+        holder.market.text = currentItem.market
+        holder.location.text = "${currentItem.district}, ${currentItem.state}"
 
-        for (i in mainData.min_price){
-            holder.min.text = holder.min.text.toString() + i + "\n"
+        // Use StringBuilder for efficient string concatenation in a loop
+        val commodityBuilder = StringBuilder()
+        for (item in currentItem.commodity) {
+            commodityBuilder.append(item).append("\n")
         }
-        holder.min.text = holder.min.text.toString().trimEnd()
+        // Remove the last newline character before setting the text
+        holder.commodity.text = commodityBuilder.toString().trimEnd()
 
-        for(i in mainData.max_price){
-            holder.max.text = holder.max.text.toString() + i + "\n"
+        val minPriceBuilder = StringBuilder()
+        for (price in currentItem.min_price) {
+            minPriceBuilder.append(price).append("\n")
         }
-        holder.max.text = holder.max.text.toString().trimEnd()
+        holder.min.text = minPriceBuilder.toString().trimEnd()
 
-//        holder.modal.text=mainData.modal_price
+        val maxPriceBuilder = StringBuilder()
+        for (price in currentItem.max_price) {
+            maxPriceBuilder.append(price).append("\n")
+        }
+        holder.max.text = maxPriceBuilder.toString().trimEnd()
+
+        // holder.modal.text = currentItem.modal_price
     }
 }

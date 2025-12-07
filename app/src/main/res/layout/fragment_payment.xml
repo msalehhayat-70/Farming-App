@@ -27,7 +27,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
 
-            />
+            tools:ignore="HardcodedText" />
 
 
         <EditText
@@ -46,7 +46,8 @@
             app:layout_constraintBottom_toTopOf="@id/pinEditPayment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/paymentFragTitle" />
+            app:layout_constraintTop_toBottomOf="@id/paymentFragTitle"
+            tools:ignore="Autofill,HardcodedText,RtlHardcoded,SpUsage,TextFields,TextSizeCheck,VisualLintTextFieldSize" />
 
 
         <EditText
@@ -65,7 +66,8 @@
             app:layout_constraintBottom_toTopOf="@id/phoneEditPayment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addressEditPayment" />
+            app:layout_constraintTop_toBottomOf="@id/addressEditPayment"
+            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
 
 
         <EditText
@@ -84,7 +86,8 @@
             app:layout_constraintBottom_toTopOf="@id/paymentOptTitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pinEditPayment" />
+            app:layout_constraintTop_toBottomOf="@id/pinEditPayment"
+            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
 
 
         <!--    <View-->
@@ -112,7 +115,8 @@
             app:layout_constraintBottom_toTopOf="@id/paymentOptionsRadioGroup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/phoneEditPayment" />
+            app:layout_constraintTop_toBottomOf="@id/phoneEditPayment"
+            tools:ignore="HardcodedText,SpUsage,TextContrastCheck,TextSizeCheck" />
 
 
         <RadioGroup
@@ -132,19 +136,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="E-Wallet" />
+                android:text="E-Wallet"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Debit Card" />
+                android:text="Debit Card"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cash on Delivery" />
+                android:text="Cash on Delivery"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
 
         </RadioGroup>
 
@@ -157,7 +164,8 @@
             android:src="@drawable/rupaycard"
             app:layout_constraintEnd_toStartOf="@id/masterCard"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/paymentOptionsRadioGroup" />
+            app:layout_constraintTop_toBottomOf="@id/paymentOptionsRadioGroup"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/masterCard"
@@ -171,7 +179,8 @@
             android:paddingVertical="4dp"
             app:layout_constraintEnd_toStartOf="@id/visaCard"
             app:layout_constraintStart_toEndOf="@id/rupayCardImage"
-            app:layout_constraintTop_toBottomOf="@id/paymentOptionsRadioGroup" />
+            app:layout_constraintTop_toBottomOf="@id/paymentOptionsRadioGroup"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/visaCard"
@@ -182,7 +191,8 @@
             android:src="@drawable/visa"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/masterCard"
-            app:layout_constraintTop_toBottomOf="@id/paymentOptionsRadioGroup" />
+            app:layout_constraintTop_toBottomOf="@id/paymentOptionsRadioGroup"
+            tools:ignore="ContentDescription" />
 
 
         <EditText
@@ -201,7 +211,8 @@
             app:layout_constraintBottom_toTopOf="@id/cardHolderNameEditPayment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rupayCardImage" />
+            app:layout_constraintTop_toBottomOf="@id/rupayCardImage"
+            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
 
 
         <EditText
@@ -219,7 +230,8 @@
             app:layout_constraintBottom_toTopOf="@id/cvvEditPayment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardNumberEditPayment" />
+            app:layout_constraintTop_toBottomOf="@id/cardNumberEditPayment"
+            tools:ignore="Autofill,HardcodedText,VisualLintTextFieldSize" />
 
 
         <EditText
@@ -235,7 +247,8 @@
             android:padding="10dp"
             android:inputType="numberPassword"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardHolderNameEditPayment" />
+            app:layout_constraintTop_toBottomOf="@id/cardHolderNameEditPayment"
+            tools:ignore="Autofill,HardcodedText" />
 
 
         <EditText
@@ -251,7 +264,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:textColor="@color/colorPrimary"
             android:textColorHint="#FF404A3A"
-            app:layout_constraintTop_toBottomOf="@id/cardHolderNameEditPayment" />
+            app:layout_constraintTop_toBottomOf="@id/cardHolderNameEditPayment"
+            tools:ignore="Autofill,HardcodedText" />
 
 
         <Button
@@ -259,18 +273,18 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="7dp"
-            android:backgroundTint="@color/colorThird"
             android:background="@drawable/round_borderless_general"
+            android:backgroundTint="@color/colorThird"
             android:text="Order Now"
             android:textAllCaps="false"
             android:textColor="#fff"
-            android:textStyle="bold"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
 
-            />
+            tools:ignore="HardcodedText,TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

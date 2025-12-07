@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -28,7 +29,8 @@
                 android:src="@color/secondary"
                 app:layout_constraintBottom_toBottomOf="@id/myOrderDeliveryStatus"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/myOrderItemName" />
+                app:layout_constraintTop_toTopOf="@id/myOrderItemName"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/myOrderItemName"
@@ -44,7 +46,7 @@
                 app:layout_constraintStart_toEndOf="@id/myOderItemImage"
                 app:layout_constraintTop_toTopOf="parent"
 
-                />
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/myOrderItemPrice"
@@ -58,19 +60,20 @@
                 app:layout_constraintStart_toEndOf="@id/myOderItemImage"
                 app:layout_constraintTop_toBottomOf="@id/myOrderItemName"
 
-                />
+                tools:ignore="HardcodedText,TextContrastCheck" />
 
             <TextView
                 android:id="@+id/deliverChargeTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
-                android:text="Delivery Charge: ₹"
+                android:text="Delivery Charge: Rs"
                 android:textColor="@color/fontColor"
                 android:textSize="10sp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toEndOf="@id/myOderItemImage"
-                app:layout_constraintTop_toBottomOf="@id/myOrderItemPrice" />
+                app:layout_constraintTop_toBottomOf="@id/myOrderItemPrice"
+                tools:ignore="HardcodedText,SmallSp" />
 
             <TextView
                 android:id="@+id/myOderDeliveryCharge"
@@ -82,7 +85,8 @@
                 android:textSize="10sp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toEndOf="@id/deliverChargeTitle"
-                app:layout_constraintTop_toBottomOf="@id/myOrderItemPrice" />
+                app:layout_constraintTop_toBottomOf="@id/myOrderItemPrice"
+                tools:ignore="SmallSp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -95,7 +99,7 @@
                 android:textSize="10sp"
                 android:textColor="@color/fontColor"
                 android:layout_marginHorizontal="7dp"
-                />
+                tools:ignore="HardcodedText,SmallSp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -108,7 +112,8 @@
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="@id/myOderDeliveryCharge"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/myOderDeliveryCharge" />
+                app:layout_constraintTop_toTopOf="@id/myOderDeliveryCharge"
+                tools:ignore="HardcodedText,SmallSp" />
 
             <TextView
                 android:id="@+id/myOrderPinCode"
@@ -120,7 +125,8 @@
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/myOderItemImage"
-                app:layout_constraintTop_toBottomOf="@id/myOderDeliveryCharge" />
+                app:layout_constraintTop_toBottomOf="@id/myOderDeliveryCharge"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/myOrderDeliveryStatus"
@@ -135,22 +141,24 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/myOderItemImage"
-                app:layout_constraintTop_toBottomOf="@id/myOrderPinCode" />
+                app:layout_constraintTop_toBottomOf="@id/myOrderPinCode"
+                tools:ignore="HardcodedText" />
 
             <Button
+                android:id="@+id/myOrderPurchaseAgain"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginHorizontal="7dp"
                 android:background="@drawable/all_buttons"
                 android:backgroundTint="@color/colorThird"
                 android:paddingHorizontal="7dp"
-                android:id="@+id/myOrderPurchaseAgain"
                 android:text="Purchase Again"
                 android:textColor="#fff"
                 android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="@id/myOrderDeliveryStatus"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/myOrderPinCode" />
+                app:layout_constraintTop_toTopOf="@id/myOrderPinCode"
+                tools:ignore="HardcodedText,SmallSp,TextContrastCheck,TouchTargetSizeCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

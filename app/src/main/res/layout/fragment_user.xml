@@ -19,7 +19,8 @@
             android:elevation="0.1dp"
             android:layout_margin="14sp"
             android:src="@drawable/ic_baseline_edit_24"
-            app:tint="@color/fontColor" />
+            app:tint="@color/fontColor"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/imageChecked"
@@ -31,28 +32,31 @@
             android:elevation="0.1dp"
             android:layout_margin="14sp"
             android:src="@drawable/ic_baseline_check_24"
-            app:tint="@color/fontColor" />
+            app:tint="@color/fontColor"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/userBackgroundImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
 
-            android:scaleType="fitXY"
             android:background="@color/secondary"
+            android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription,ImageContrastCheck" />
 
         <ImageView
             android:id="@+id/uploadUserBackgroundImage"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_photo_camera_24"
             app:layout_constraintBottom_toBottomOf="@id/userBackgroundImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/ic_baseline_photo_camera_24"
             app:layout_constraintTop_toTopOf="@id/userBackgroundImage"
-            app:tint="@color/colorPrimary" />
+            app:tint="@color/colorPrimary"
+            tools:ignore="ContentDescription,ImageContrastCheck" />
 
         <ProgressBar
             android:id="@+id/uploadBackProgressProfile"
@@ -79,14 +83,16 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:scaleType="fitXY"
-                android:src="@color/colorPrimary" />
+                android:src="@color/colorPrimary"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
 
             <ImageView
                 android:id="@+id/uploadProfilePictureImage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_baseline_photo_camera_24" />
+                android:src="@drawable/ic_baseline_photo_camera_24"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
 
             <ProgressBar
                 android:id="@+id/uploadProgressBarProfile"
@@ -107,7 +113,8 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/userImageCardUserFrag"
-            app:layout_constraintTop_toBottomOf="@id/userBackgroundImage" />
+            app:layout_constraintTop_toBottomOf="@id/userBackgroundImage"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/userCityUserProfileFrag"
@@ -118,7 +125,8 @@
             android:textColor="@color/fontColor"
             app:layout_constraintEnd_toStartOf="@id/userPostsCountUserProfileFrag"
             app:layout_constraintStart_toEndOf="@id/userImageCardUserFrag"
-            app:layout_constraintTop_toBottomOf="@id/userNameUserProfileFrag" />
+            app:layout_constraintTop_toBottomOf="@id/userNameUserProfileFrag"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/userPostsCountUserProfileFrag"
@@ -129,7 +137,8 @@
             android:textColor="@color/fontColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/userCityUserProfileFrag"
-            app:layout_constraintTop_toBottomOf="@id/userNameUserProfileFrag" />
+            app:layout_constraintTop_toBottomOf="@id/userNameUserProfileFrag"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/userEmailUserProfileFrag"
@@ -140,7 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="7dp"
-            />
+            tools:ignore="HardcodedText" />
 
         <EditText
             android:id="@+id/cityEditUserProfile"
@@ -154,7 +163,7 @@
             android:background="@drawable/edit_back"
             android:layout_height="50dp"
             android:paddingStart="10dp"
-            />
+            tools:ignore="Autofill,HardcodedText,RtlSymmetry,TextFields,VisualLintTextFieldSize" />
 
         <TextView
             android:id="@+id/aboutTitleUserProfileFrag"
@@ -166,7 +175,8 @@
             android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/userImageCardUserFrag"
-            app:layout_constraintTop_toBottomOf="@id/cityEditUserProfile" />
+            app:layout_constraintTop_toBottomOf="@id/cityEditUserProfile"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/aboutValueUserProfileFrag"
@@ -207,7 +217,7 @@
             app:layout_constraintStart_toStartOf="@id/userImageCardUserFrag"
             app:layout_constraintTop_toBottomOf="@id/aboutValueUserProfileFrag"
 
-            />
+            tools:ignore="Autofill,HardcodedText,RtlSymmetry,TextFields,VisualLintTextFieldSize" />
 
 <!--        <com.google.android.material.textfield.TextInputLayout-->
 <!--            android:id="@+id/inputLayout1"-->
@@ -234,10 +244,12 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="25dp"
             android:text="✔"
+            android:textColor="#37474F"
             app:layout_constraintBottom_toBottomOf="@+id/aboutValueEditUserProfileFrag"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/aboutValueEditUserProfileFrag"
-            app:layout_constraintTop_toBottomOf="@id/aboutValueUserProfileFrag" />
+            app:layout_constraintTop_toBottomOf="@id/aboutValueUserProfileFrag"
+            tools:ignore="HardcodedText" />
 
 
         <TextView
@@ -250,7 +262,8 @@
             android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/userImageCardUserFrag"
-            app:layout_constraintTop_toBottomOf="@id/aboutValueEditUserProfileFrag" />
+            app:layout_constraintTop_toBottomOf="@id/aboutValueEditUserProfileFrag"
+            tools:ignore="HardcodedText" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/userProfilePostsRecycler"

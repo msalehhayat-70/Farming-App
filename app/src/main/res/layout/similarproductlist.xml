@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="7dp"
@@ -15,28 +16,33 @@
 
 
             <ImageView
-                android:src="#64DD17"
                 android:id="@+id/recimg"
-            app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 android:layout_width="130dp"
-                android:layout_height="100dp"/>
+                android:layout_height="100dp"
+                android:src="#64DD17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+
             <TextView
                 android:id="@+id/rectitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ABCD..."
                 android:textSize="18dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recimg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ABCD..."/>
+                tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+
             <TextView
                 android:id="@+id/recPrice"
-                android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toBottomOf="@id/recimg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$120"/>
+                android:text="$120"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recimg"
+                tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

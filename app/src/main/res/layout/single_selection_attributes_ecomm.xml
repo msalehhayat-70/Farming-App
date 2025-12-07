@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginVertical="7dp"
@@ -16,7 +17,7 @@
         android:textSize="14sp"
         android:textColor="@color/fontColor"
         android:layout_height="wrap_content"
-        />
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
 
@@ -43,17 +44,19 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:id="@+id/attribute1"
                     android:layout_width="wrap_content"
-                    android:textColor="#fff"
-                    android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
-
                     android:text="3.5 Kg"
+                    android:textColor="#fff"
 
-                    />
+                    android:textStyle="bold"
+
+                    tools:ignore="HardcodedText,TextContrastCheck" />
+
                 <TextView
                     android:id="@+id/attribute1Price"
                     android:layout_width="wrap_content"
@@ -63,7 +66,7 @@
                     android:textColor="#fff"
                     android:textStyle="bold"
 
-                    />
+                    tools:ignore="HardcodedText,TextContrastCheck" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -92,14 +95,14 @@
 
                     android:text="3.5 Kg"
 
-                    />
+                    tools:ignore="HardcodedText" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$1672"
                     android:textColor="@color/fontColor"
                     android:id="@+id/attribute2Price"
-                    />
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -128,14 +131,14 @@
 
                     android:text="3.5 Kg"
 
-                    />
+                    tools:ignore="HardcodedText" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$1672"
                     android:textColor="@color/fontColor"
                     android:id="@+id/attribute3Price"
-                    />
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

@@ -1,29 +1,53 @@
 package com.project.farmingapp.adapter
 
-import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
-import android.text.style.TypefaceSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.project.farmingapp.R
 import com.project.farmingapp.utilities.CellClickListener
-import kotlinx.android.synthetic.main.single_selection_attributes_ecomm.view.*
 
-class AttributesSelectionAdapter(var context: Context, var allData: List<Map<String, Any>>, private val cellClickListener: CellClickListener): RecyclerView.Adapter<AttributesSelectionAdapter.AttributesSelectionViewHolder>() {
-    class AttributesSelectionViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+class AttributesSelectionAdapter(
+    private val allData: List<Map<String, Any>>,
+    private val cellClickListener: CellClickListener
+) : RecyclerView.Adapter<AttributesSelectionAdapter.AttributesSelectionViewHolder>() {
 
+    // Stores the selected index for each attribute group (row in the RecyclerView)
+    // The key is the adapter position, and the value is the selected card index (0, 1, or 2)
+    private val selectionState = mutableMapOf<Int, Int>()
+
+    // Holds the view references to avoid repeated and slow findViewById calls
+    class AttributesSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val attributeTitle: TextView = itemView.findViewById(R.id.attributeTitle)
+
+        // Grouping views for easier management
+        val attributeCards = listOf<CardView>(
+            itemView.findViewById(R.id.cardSize1),
+            itemView.findViewById(R.id.cardSize2),
+            itemView.findViewById(R.id.cardSize3)
+        )
+        val attributeTexts = listOf<TextView>(
+            itemView.findViewById(R.id.attribute1),
+            itemView.findViewById(R.id.attribute2),
+            itemView.findViewById(R.id.attribute3)
+        )
+        val attributePrices = listOf<TextView>(
+            itemView.findViewById(R.id.attribute1Price),
+            itemView.findViewById(R.id.attribute2Price),
+            itemView.findViewById(R.id.attribute3Price)
+        )
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): AttributesSelectionViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.single_selection_attributes_ecomm, parent, false)
-        return AttributesSelectionAdapter.AttributesSelectionViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AttributesSelectionViewHolder {
+        // Use parent.context to inflate views - this is the safe way
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.single_selection_attributes_ecomm, parent, false)
+        return AttributesSelectionViewHolder(view)
     }
 
     override fun getItemCount(): Int {
@@ -31,99 +55,65 @@ class AttributesSelectionAdapter(var context: Context, var allData: List<Map<Str
     }
 
     override fun onBindViewHolder(holder: AttributesSelectionViewHolder, position: Int) {
-        val currentData = allData[position] as Map<String, Any>
+        val currentDataMap = allData[position]
+        val entry = currentDataMap.entries.firstOrNull() ?: return // Exit if map is empty
 
+        val key = entry.key
+        holder.attributeTitle.text = key
 
-        for ((key, values) in currentData){
+        // Safely get the list of values
+        val values = entry.value as? List<*> ?: return
 
-            cellClickListener.onCellClickListener("1 ${key}")
+        // Set the text for each attribute card
+        for (i in 0..2) {
+            val valueString = values.getOrNull(i)?.toString()
+            val parts = valueString?.split(" ")
 
-            holder.itemView.attributeTitle.text = key
-            var allValues = values as ArrayList<String>
-            var currentValue = allValues[0].toString().split(" ")
-            holder.itemView.attribute1.text = currentValue[0].toString()
-            holder.itemView.attribute1Price.text = currentValue[1].toString()
+            holder.attributeTexts[i].text = parts?.getOrNull(0) ?: ""
+            holder.attributePrices[i].text = parts?.getOrNull(1) ?: ""
+        }
 
-            currentValue = allValues[1].toString().split(" ")
-            holder.itemView.attribute2.text = currentValue[0].toString()
-            holder.itemView.attribute2Price.text = currentValue[1].toString()
+        // Restore the selection state for this item
+        val selectedIndex = selectionState.getOrDefault(position, 0)
+        updateCardStyles(holder, selectedIndex)
 
-            currentValue = allValues[2].toString().split(" ")
-            holder.itemView.attribute3.text = currentValue[0].toString()
-            holder.itemView.attribute3Price.text = currentValue[1].toString()
-
-//            holder.itemView.attribute1.text = currentValue[0].toString()
-//            holder.itemView.attribute1Price.text = currentValue[1].toString()
-
-            holder.itemView.cardSize1.setOnClickListener {
-                cellClickListener.onCellClickListener("1 ${key}")
-                Toast.makeText(context, "You Clicked 1", Toast.LENGTH_SHORT).show()
-                holder.itemView.cardSize1.backgroundTintList = context.getResources().getColorStateList(R.color.colorPrimary)
-                holder.itemView.attribute1.setTextColor(Color.parseColor("#FFFFFF"))
-                holder.itemView.attribute1Price.setTextColor(Color.parseColor("#FFFFFF"))
-                holder.itemView.attribute1.setTypeface(null, Typeface.BOLD)
-                holder.itemView.attribute1Price.setTypeface(null, Typeface.BOLD)
-
-                holder.itemView.cardSize2.backgroundTintList = context.getResources().getColorStateList(R.color.secondary)
-                holder.itemView.attribute2.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute2Price.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute2.setTypeface(null, Typeface.NORMAL)
-                holder.itemView.attribute2Price.setTypeface(null, Typeface.NORMAL)
-
-                holder.itemView.cardSize3.backgroundTintList = context.getResources().getColorStateList(R.color.secondary)
-                holder.itemView.attribute3.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute3Price.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute3.setTypeface(null, Typeface.NORMAL)
-                holder.itemView.attribute3Price.setTypeface(null, Typeface.NORMAL)
+        // Set click listeners for each card
+        for (i in 0..2) {
+            holder.attributeCards[i].setOnClickListener {
+                // Update state
+                selectionState[position] = i
+                // Update UI
+                updateCardStyles(holder, i)
+                // Notify the fragment/activity of the selection
+                cellClickListener.onCellClickListener("${i + 1} $key")
             }
+        }
+    }
 
-            holder.itemView.cardSize2.setOnClickListener {
-                cellClickListener.onCellClickListener("2 ${key}")
+    /**
+     * A helper function to update the visual style of all three cards based on the selected one.
+     * This removes a massive amount of duplicate code.
+     */
+    private fun updateCardStyles(holder: AttributesSelectionViewHolder, selectedIndex: Int) {
+        val context = holder.itemView.context
 
+        // Define selected and unselected styles
+        val selectedColor = ContextCompat.getColorStateList(context, R.color.colorPrimary)
+        val unselectedColor = ContextCompat.getColorStateList(context, R.color.secondary)
+        val selectedTextColor = Color.WHITE
+        val unselectedTextColor = ContextCompat.getColor(context, R.color.fontColor) // FIXED: Use color resource
 
-                holder.itemView.cardSize2.backgroundTintList = context.getResources().getColorStateList(R.color.colorPrimary)
-                holder.itemView.attribute2.setTextColor(Color.parseColor("#FFFFFF"))
-                holder.itemView.attribute2Price.setTextColor(Color.parseColor("#FFFFFF"))
-                holder.itemView.attribute2.setTypeface(null, Typeface.BOLD)
-                holder.itemView.attribute2Price.setTypeface(null, Typeface.BOLD)
+        for (i in 0..2) {
+            val isSelected = (i == selectedIndex)
+            val card = holder.attributeCards[i]
+            val text = holder.attributeTexts[i]
+            val price = holder.attributePrices[i]
 
-                holder.itemView.cardSize3.backgroundTintList = context.getResources().getColorStateList(R.color.secondary)
-                holder.itemView.attribute3.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute3Price.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute3.setTypeface(null, Typeface.NORMAL)
-                holder.itemView.attribute3Price.setTypeface(null, Typeface.NORMAL)
-
-                holder.itemView.cardSize1.backgroundTintList = context.getResources().getColorStateList(R.color.secondary)
-                holder.itemView.attribute1.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute1Price.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute1.setTypeface(null, Typeface.NORMAL)
-                holder.itemView.attribute1Price.setTypeface(null, Typeface.NORMAL)
-
-                Toast.makeText(context, "You Clicked 2", Toast.LENGTH_SHORT).show()
-            }
-
-            holder.itemView.cardSize3.setOnClickListener {
-                cellClickListener.onCellClickListener("3 ${key}")
-                Toast.makeText(context, "You Clicked 3", Toast.LENGTH_SHORT).show()
-
-                holder.itemView.cardSize3.backgroundTintList = context.getResources().getColorStateList(R.color.colorPrimary)
-                holder.itemView.attribute3.setTextColor(Color.parseColor("#FFFFFF"))
-                holder.itemView.attribute3Price.setTextColor(Color.parseColor("#FFFFFF"))
-                holder.itemView.attribute3.setTypeface(null, Typeface.BOLD)
-                holder.itemView.attribute3Price.setTypeface(null, Typeface.BOLD)
-
-                holder.itemView.cardSize1.backgroundTintList = context.getResources().getColorStateList(R.color.secondary)
-                holder.itemView.attribute1.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute1Price.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute1.setTypeface(null, Typeface.NORMAL)
-                holder.itemView.attribute1Price.setTypeface(null, Typeface.NORMAL)
-
-                holder.itemView.cardSize2.backgroundTintList = context.getResources().getColorStateList(R.color.secondary)
-                holder.itemView.attribute2.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute2Price.setTextColor(Color.parseColor("#FF404A3A"))
-                holder.itemView.attribute2.setTypeface(null, Typeface.NORMAL)
-                holder.itemView.attribute2Price.setTypeface(null, Typeface.NORMAL)
-            }
+            card.backgroundTintList = if (isSelected) selectedColor else unselectedColor
+            text.setTextColor(if (isSelected) selectedTextColor else unselectedTextColor)
+            price.setTextColor(if (isSelected) selectedTextColor else unselectedTextColor)
+            text.setTypeface(null, if (isSelected) Typeface.BOLD else Typeface.NORMAL)
+            price.setTypeface(null, if (isSelected) Typeface.BOLD else Typeface.NORMAL)
         }
     }
 }

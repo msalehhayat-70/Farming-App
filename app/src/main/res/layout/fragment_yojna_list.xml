@@ -19,7 +19,8 @@
        app:layout_constraintEnd_toEndOf="parent"
         android:textSize="21sp"
         android:textStyle="bold"
-        android:text="Yojna" />
+        android:text="Yojna"
+        tools:ignore="HardcodedText" />
 
       <androidx.recyclerview.widget.RecyclerView
           android:id="@+id/rcyclr_yojnaList"

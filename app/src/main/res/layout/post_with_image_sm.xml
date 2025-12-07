@@ -53,7 +53,8 @@
             android:id="@+id/userProfileImagePost"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_user_profile" />
+            android:src="@drawable/ic_user_profile"
+            tools:ignore="ContentDescription,ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
 
 
@@ -68,7 +69,8 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/userProfileImageCard"
         app:layout_constraintStart_toEndOf="@id/userProfileImageCard"
-        app:layout_constraintTop_toTopOf="@id/userProfileImageCard" />
+        app:layout_constraintTop_toTopOf="@id/userProfileImageCard"
+        tools:ignore="HardcodedText,VisualLintOverlap" />
 
     <TextView
         android:textColor="@color/fontColor"
@@ -82,7 +84,8 @@
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@id/userProfileImageCard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/userProfileImageCard" />
+        app:layout_constraintTop_toTopOf="@id/userProfileImageCard"
+        tools:ignore="HardcodedText,SmallSp,VisualLintOverlap" />
 
 
     <ImageView
@@ -93,7 +96,8 @@
         android:background="@color/colorPrimary"
         android:scaleType="fitXY"
         app:layout_constraintTop_toBottomOf="@id/userProfileImageCard"
-        app:layout_constraintBottom_toTopOf="@id/userPostTitleValue"/>
+        app:layout_constraintBottom_toTopOf="@id/userPostTitleValue"
+        tools:ignore="ContentDescription" />
 
     <WebView
         android:id="@+id/postVideoSM"
@@ -114,19 +118,20 @@
     <!--        app:layout_constraintTop_toBottomOf="@id/userProfileImageCard" />-->
 
 
-    <TextView
-        android:justificationMode="inter_word"
-        android:textColor="@color/fontColor"
-        android:id="@+id/userPostTitleValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:lineSpacingExtra="5dp"
-        android:text="This is the title."
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/postImageSM" />
+        <TextView
+            android:id="@+id/userPostTitleValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:justificationMode="inter_word"
+            android:lineSpacingExtra="5dp"
+            android:text="This is the title."
+            android:textColor="@color/fontColor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/postImageSM"
+            tools:ignore="HardcodedText,UnusedAttribute,TextContrastCheck" />
 
     <TextView
         android:textColor="@color/fontColor"
@@ -143,7 +148,8 @@
         android:lineSpacingExtra="5dp"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userPostTitleValue" />
+        app:layout_constraintTop_toBottomOf="@id/userPostTitleValue"
+        tools:ignore="HardcodedText,UnusedAttribute" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

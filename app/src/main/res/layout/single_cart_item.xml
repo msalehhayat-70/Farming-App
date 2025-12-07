@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -28,7 +29,8 @@
                 android:background="@drawable/round_borderless_general"
                 android:src="@color/secondary"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/itemNameCart"
@@ -44,32 +46,32 @@
                 app:layout_constraintStart_toEndOf="@id/cartItemImage"
                 app:layout_constraintTop_toTopOf="parent"
 
-                />
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/itemPriceCart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
-                android:text="₹469"
+                android:text="469 Rs"
                 android:textColor="@color/colorPrimary"
                 android:textSize="21sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/cartItemImage"
                 app:layout_constraintTop_toBottomOf="@id/itemNameCart"
 
-                />
+                tools:ignore="HardcodedText,TextContrastCheck" />
 
             <ImageView
                 android:id="@+id/removeCartBtn"
                 android:layout_width="wrap_content"
-                android:layout_marginHorizontal="7dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@id/itemPriceCart"
-                app:layout_constraintBottom_toBottomOf="@id/itemPriceCart"
+                android:layout_marginHorizontal="7dp"
                 android:src="@drawable/ic_baseline_delete_forever_24"
+                app:layout_constraintBottom_toBottomOf="@id/itemPriceCart"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="@id/itemPriceCart"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
 
 
 
@@ -93,7 +95,7 @@
                         android:backgroundTint="#00FFFFFF"
                         android:foregroundTint="#fff"
                         app:srcCompat="@drawable/add_icon"
-                         />
+                        tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                     <TextView
                         android:id="@+id/quantityCountEcomm"
@@ -103,16 +105,17 @@
                         android:layout_marginHorizontal="5dp"
                         android:text="1"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                     <ImageButton
                         android:id="@+id/decreaseQtyBtn"
                         android:layout_width="35dp"
-                        android:foregroundTint="#000"
                         android:layout_height="30dp"
                         android:backgroundTint="#00FFFFFF"
+                        android:foregroundTint="#000"
                         app:srcCompat="@drawable/minus_icon"
-                        />
+                        tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
                 </LinearLayout>
@@ -129,7 +132,7 @@
                 android:text="In Stock"
                 android:textStyle="bold"
                 android:textColor="@color/fontColor"
-                />
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/deliveryChargeCart"
@@ -142,7 +145,8 @@
                 android:layout_marginHorizontal="1dp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toEndOf="@id/deliveryChargeTitle"
-                app:layout_constraintTop_toBottomOf="@id/quantityChangeCard" />
+                app:layout_constraintTop_toBottomOf="@id/quantityChangeCard"
+                tools:ignore="HardcodedText,SmallSp" />
 
 
             <TextView
@@ -157,7 +161,7 @@
                 android:textStyle="italic"
                 android:id="@+id/deliveryChargeTitle"
                 android:text="Delivery Charge: ₹"
-                />
+                tools:ignore="HardcodedText,SmallSp" />
 
             <TextView
                 android:id="@+id/cartItemFirm"
@@ -171,7 +175,7 @@
                 android:text="- Hello World Firm"
                 android:textStyle="italic"
                 android:textSize="10sp"
-                />
+                tools:ignore="HardcodedText,SmallSp" />
 
 <!--            <TextView-->
 <!--                android:layout_width="wrap_content"-->
@@ -193,12 +197,14 @@
                 android:layout_marginVertical="7dp"
                 android:background="@drawable/rounder_border_general"
                 android:backgroundTint="@color/secondary"
-                android:text="Buy Now: ₹487"
+                android:text="Buy Now: 487 Rs"
                 android:textAllCaps="false"
                 android:textColor="@color/fontColor"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cartItemImage" />
+                app:layout_constraintTop_toBottomOf="@id/cartItemImage"
+                tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize"
+                tools:layout_editor_absoluteX="7dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
